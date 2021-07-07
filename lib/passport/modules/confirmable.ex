@@ -49,7 +49,6 @@ defmodule Passport.Confirmable do
     confirmed_at =  params[:confirmed_at] || Passport.Util.generate_timestamp_for(changeset, :confirmed_at)
     changeset
     |> put_change(:confirmation_token, nil)
-    |> put_change(:confirmation_sent_at, nil)
     |> put_change(:confirmed_at, confirmed_at)
   end
 
