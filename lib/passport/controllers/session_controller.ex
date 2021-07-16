@@ -101,6 +101,7 @@ defmodule Passport.SessionController do
 
       {:error, {:locked, entity}} ->
         conn
+        |> put_resp_header("x-failed-attempts", Integer.to_string(entity.failed_attempts))
         |> put_resp_header("x-locked-at", DateTime.to_string(entity.locked_at))
         |> send_locked(reason: "Too many failed attempts.")
 
