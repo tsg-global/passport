@@ -16,7 +16,7 @@ defmodule Passport.Mixfile do
       config_path: "config/config.exs",
       deps_path: "deps",
       lockfile: "mix.lock",
-      elixir: "~> 1.5",
+      elixir: "~> 1.13",
       start_permanent: Mix.env == :prod,
       compilers: if Mix.env == :test do
         [:phoenix, :gettext] ++ Mix.compilers
@@ -51,7 +51,7 @@ defmodule Passport.Mixfile do
       {:postgrex, ">= 0.0.0", only: [:test]},
       #
       {:bcrypt_elixir, "~> 1.0 or ~> 2.0"},
-      {:pot, "~> 0.9"},
+      {:pot, "~> 1.0"},
       {:ecto, "~> 3.0", override: true},
       {:ecto_sql, "~> 3.0"},
       {:jason, "~> 1.1"},
